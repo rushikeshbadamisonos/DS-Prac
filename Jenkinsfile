@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo "Building....."
+                sh './build/build-container.sh'
             }
         }
         stage('Deploy') {
