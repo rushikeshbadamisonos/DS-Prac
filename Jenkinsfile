@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 echo "Building....."
+                su -c
                 sh 'rm -rf job-deployement libs lib'
                 sh 'python3 -m venv job-deployement'
                 sh '''
@@ -17,6 +18,7 @@ pipeline {
                 do
                   pip3 install requests $dependency
                 done < "$requirement"
+
                 '''
                 sh './build/build-container.sh wordcount'
 
