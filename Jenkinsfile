@@ -8,10 +8,11 @@ pipeline {
             }
             steps {
                 echo "Building....."
-                su -c
+
                 sh 'rm -rf job-deployement libs lib'
                 sh 'python3 -m venv job-deployement'
                 sh '''
+                su -c
                 source job-deployement/bin/activate
                 requirement="src/jobs/wordcount/Config/requirements.txt"
                 while IFS= read -r dependency
