@@ -1,4 +1,5 @@
 pwd
+ls -l
 python3 -m venv job-deployement
 python3 -m venv job-deployement
 source job-deployement/bin/activate
