@@ -1,13 +1,17 @@
 pipeline {
     agent none
     stages {
+      environment {
+        key = credentials('key')
+        clusterId = credentials('cluster_Id')
+        }
         stage('Build') {
             agent {
                 label "python"
             }
             steps {
                 echo "Building....."
-                sh './build/build-container.sh'
+                sh './build/build-container.sh wordcount'
             }
         }
         stage('Deploy') {
@@ -16,6 +20,7 @@ pipeline {
             }
             steps {
                 echo 'Testing..'
+                sh './build/ship-container.sh wordcount $clusterId $key'
             }
         }
         stage('Monitor') {
