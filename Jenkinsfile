@@ -1,7 +1,6 @@
 pipeline {
     agent none
     environment {
-      key = credentials('key')
       clusterId = credentials('cluster_Id')
       }
     stages {
@@ -20,8 +19,8 @@ pipeline {
               label "ansible"
             }
             steps {
-                echo 'Testing..'
-                sh './build/ship-container.sh wordcount $clusterId $key'
+                echo 'Testing.. $clusterId'
+                #sh './build/ship-container.sh wordcount $clusterId $key'
             }
         }
         stage('Monitor') {
