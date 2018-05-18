@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 echo "Building....."
+                sh 'rm -rf job-deployement libs lib'
                 sh './build/build-container.sh wordcount'
             }
         }
@@ -17,7 +18,7 @@ pipeline {
             }
             steps {
               echo 'Testing ...'
-              sh 'rm -rf job-deployement'
+              sh 'ls -l'
 
             }
         }
