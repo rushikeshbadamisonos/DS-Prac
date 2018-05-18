@@ -19,7 +19,8 @@ pipeline {
               label "ansible"
             }
             steps {
-                echo 'Testing.. '$clusterId
+                echo 'Testing ...'
+                echo $clusterId
 
             }
         }
