@@ -1,8 +1,3 @@
-ls -l
-uname -a
-virtualenv --version
-python3 -m venv job-deployement
-source job-deployement/bin/activate
 requirement="src/jobs/"$1"/Config/requirements.txt"
 while IFS= read -r dependency
 do
