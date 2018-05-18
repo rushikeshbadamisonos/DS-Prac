@@ -1,8 +1,5 @@
 pipeline {
     agent none
-    environment {
-      clusterId = credentials('cluster_Id')
-      }
     stages {
 
         stage('Build') {
@@ -19,8 +16,8 @@ pipeline {
               label "ansible"
             }
             steps {
-                echo 'Testing ...'
-                echo $clusterId
+              echo 'Testing ...'
+              sh 'rm -rf job-deployement'
 
             }
         }
