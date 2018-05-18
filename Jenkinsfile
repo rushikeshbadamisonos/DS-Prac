@@ -1,10 +1,11 @@
 pipeline {
     agent none
+    environment {
+      key = credentials('key')
+      clusterId = credentials('cluster_Id')
+      }
     stages {
-      environment {
-        key = credentials('key')
-        clusterId = credentials('cluster_Id')
-        }
+
         stage('Build') {
             agent {
                 label "python"
