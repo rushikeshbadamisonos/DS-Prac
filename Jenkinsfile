@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 echo 'Testing.. $clusterId'
-                #sh './build/ship-container.sh wordcount $clusterId $key'
+                
             }
         }
         stage('Monitor') {
