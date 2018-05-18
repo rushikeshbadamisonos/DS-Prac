@@ -1,8 +1,8 @@
 ls -l
 uname -a
 python3 -m venv job-deployement
-pwd
 source job-deployement/bin/activate
+ls -l
 requirement="src/jobs/"$1"/Config/requirements.txt"
 while IFS= read -r dependency
 do
