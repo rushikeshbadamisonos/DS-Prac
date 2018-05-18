@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 echo "Building....."
+                sh "sudo su"
                 sh 'rm -rf job-deployement libs lib'
                 sh 'python3 -m venv job-deployement'
                 sh 'source job-deployement/bin/activate'
