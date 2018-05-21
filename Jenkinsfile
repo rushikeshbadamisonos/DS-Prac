@@ -14,7 +14,7 @@ pipeline {
                 sh 'mkdir libs container'
                 sh '''
                   source job-deployement/bin/activate
-                  requirement="src/jobs/"$1"/Config/requirements.txt"
+                  requirement="src/jobs/"wordcount"/Config/requirements.txt"
                   while IFS= read -r dependency
                   do
                     pip3 install --user requests $dependency
