@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: Installing python libraries using requirements file in Ansible
+    pip:
+      requirements: req.txt
+      chdir: /tmp
