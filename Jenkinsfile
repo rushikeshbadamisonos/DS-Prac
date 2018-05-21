@@ -22,6 +22,7 @@ pipeline {
                     pip3 install --ignore-installed --user $dependency
                     done < "$requirement"
                     cd job-deployement/lib/python3.6/site-packages/
+                    ls -l
                   '''
                 sh './build/build-container.sh wordcount'
 
