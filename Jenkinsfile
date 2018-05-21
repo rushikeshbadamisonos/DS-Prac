@@ -16,10 +16,8 @@ pipeline {
                 requirement="src/jobs/"wordcount"/Config/requirements.txt"
                 while IFS= read -r dependency
                 do
-                  source job-deployement/bin/activate && pip install  --user requests $dependency
+                  source job-deployement/bin/activate && pip install -I --user requests $dependency
                   done < "$requirement"
-
-
                 '''
                 sh './build/build-container.sh wordcount'
 
