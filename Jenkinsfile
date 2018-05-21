@@ -4,11 +4,11 @@ pipeline {
 
         stage('Build') {
             agent {
-                label "java"
+                label "python"
             }
             steps {
                 echo "Building....."
-
+                sh 'RUN apk update && apk add bash'
                 sh 'rm -rf job-deployement libs lib container'
                 sh 'virtualenv --no-site-packages job-deployement'
                 sh 'mkdir libs container'
