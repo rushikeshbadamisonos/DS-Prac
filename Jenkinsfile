@@ -19,8 +19,10 @@ pipeline {
                   do
                     pip3 install --user $dependency
                     done < "$requirement"
+                  deactivate
                   '''
                 sh './build/build-container.sh wordcount'
+
 
             }
         }
