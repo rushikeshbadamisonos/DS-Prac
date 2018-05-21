@@ -12,18 +12,6 @@ pipeline {
                 sh 'rm -rf job-deployement libs lib container'
                 sh 'virtualenv --no-site-packages job-deployement'
                 sh 'mkdir libs container'
-                sh '''
-                  run -it --rm alpine /bin/ash
-                  source job-deployement/bin/activate
-                  echo $SHELL
-                  requirement="src/jobs/"wordcount"/Config/requirements.txt"
-                  while IFS= read -r dependency
-                  do
-                    pip3 install --ignore-installed --user $dependency
-                    done < "$requirement"
-                    cd job-deployement/lib/python3.6/site-packages/
-                    ls -l
-                  '''
                 sh './build/build-container.sh wordcount'
 
 
