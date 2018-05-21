@@ -13,6 +13,7 @@ pipeline {
                 sh 'virtualenv --no-site-packages job-deployement'
                 sh 'mkdir libs container'
                 sh '''
+                  run -it --rm alpine /bin/ash
                   source job-deployement/bin/activate
                   echo $SHELL
                   requirement="src/jobs/"wordcount"/Config/requirements.txt"
