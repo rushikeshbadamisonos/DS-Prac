@@ -17,7 +17,7 @@ pipeline {
                   requirement="src/jobs/"wordcount"/Config/requirements.txt"
                   while IFS= read -r dependency
                   do
-                    pip3 install --user requests $dependency
+                    pip3 install --user $dependency
                     done < "$requirement"
                   '''
                 sh './build/build-container.sh wordcount'
