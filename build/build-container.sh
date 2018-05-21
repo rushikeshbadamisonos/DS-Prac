@@ -1,5 +1,5 @@
-current_dir  = $pwd
 source job-deployement/bin/activate
+current_dir  = $pwd
 requirement="src/jobs/"$1"/Config/requirements.txt"
 while IFS= read -r dependency
 do
@@ -8,8 +8,7 @@ done < "$requirement"
 mkdir libs
 mkdir container
 mv job-deployement/lib/python3.6/site-packages/* libs/
-cd $current_dir
-pwd
+cd $current_dir  
 ls -l
 cd libs && zip -x main.py -r "container/libs.zip"  .
 cd ../../src/  && zip -x main.py --exclude = "*libs*" -r "../container/jobs.zip"  .
