@@ -1,3 +1,4 @@
 #!/bin/sh
 echo $SHELL
-pip3 list
+cd job-deployement/lib/python3.6/site-packages/
+ls -l
