@@ -11,15 +11,6 @@ pipeline {
 
                 sh 'rm -rf job-deployement libs lib'
                 sh 'python3 -m venv job-deployement'
-                sh '''
-                source job-deployement/bin/activate
-                requirement="src/jobs/wordcount/Config/requirements.txt"
-                while IFS= read -r dependency
-                do
-                  pip3 install --user requests $dependency
-                done < "$requirement"
-
-                '''
                 sh './build/build-container.sh wordcount'
 
             }
