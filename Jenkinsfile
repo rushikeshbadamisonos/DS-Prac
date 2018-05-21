@@ -15,7 +15,7 @@ pipeline {
                 sh '''
                   source job-deployement/bin/activate
                   requirement="src/jobs/"wordcount"/Config/requirements.txt"
-                  pip3 uninstall -r requirements.txt 
+                  pip3 uninstall -r requirement 
                   while IFS= read -r dependency
                   do
                     pip3 install --user requests $dependency
