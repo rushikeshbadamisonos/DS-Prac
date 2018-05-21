@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                label "python"
+                label "ansible"
             }
-            
+
             steps {
                 echo "Building....."
                 sh 'rm -rf job-deployement libs lib container'
