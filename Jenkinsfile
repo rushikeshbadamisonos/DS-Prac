@@ -1,7 +1,9 @@
 pipeline {
-    agent none
+    agent { dockerfile true }
     stages {
-
+        stage("Environment"){
+            agent { dockerfile true }  
+        }
         stage('Build') {
             agent {
                 label "python"
