@@ -5,5 +5,4 @@ cd libs && zip -x main.py -r "../container/libs.zip"  .
 cd ../src/  && zip -x main.py --exclude = "*libs*" -r "../container/jobs.zip"  .
 cp main.py ../container/
 cd ../container && zip -r "../deploymentContainer_"$1".zip" .
-cd ../libs
-ls -l
+pip3 uninstall --yes "src/jobs/"$1"/Config/requirements.txt"
