@@ -16,7 +16,7 @@ pipeline {
                 pip uninstall --yes -r $requirement
                 while IFS= read -r dependency
                 do
-                  source job-deployement/bin/activate && pip install -I --user requests $dependency
+                  source job-deployement/bin/activate && pip3 install -I --user requests $dependency
                   done < "$requirement"
                 '''
                 sh './build/build-container.sh wordcount'
