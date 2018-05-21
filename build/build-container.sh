@@ -7,7 +7,7 @@ done < "$requirement"
 mkdir libs
 mkdir container
 mv job-deployement/lib/python3.6/site-packages/* libs/
-cd libs && zip -x main.py -r "container/libs.zip"  .
+cd libs && zip -x main.py -r "../container/libs.zip"  .
 pwd
 cd src/  && zip -x main.py --exclude = "*libs*" -r "container/jobs.zip"  .
 cp src/main.py  container/
