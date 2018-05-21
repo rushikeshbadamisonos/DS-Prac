@@ -6,7 +6,7 @@ while IFS= read -r dependency
 do
   pip install --ignore-installed --user $dependency
   done < "$requirement"
-  cd job-deployement/lib/
+  cd job-deployement/lib/python3.6/
 ls -l
 mv job-deployement/lib/python3.6/site-packages/* libs/
 cd libs && zip -x main.py -r "../container/libs.zip"  .
