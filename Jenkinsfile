@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "Building....."
                 sh 'rm -rf job-deployement libs lib container'
-                sh 'virtualenv --no-site-packages job-deployement'
+                sh 'virtualenv  job-deployement --no-site-packages'
                 sh 'mkdir libs container'
                 sh './build/build-container.sh wordcount'
 
