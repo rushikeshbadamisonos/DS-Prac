@@ -15,11 +15,9 @@ pipeline {
                 sh '''
                   source job-deployement/bin/activate
                   requirement="src/jobs/"wordcount"/Config/requirements.txt"
-                  pwd
-                  pip3 uninstall  -r $requirement
                   while IFS= read -r dependency
                   do
-                    pip3 install --user requests $dependency
+                    pip3 install --user --no-site-packages requests $dependency
                     done < "$requirement"
                   '''
                 sh './build/build-container.sh wordcount'
