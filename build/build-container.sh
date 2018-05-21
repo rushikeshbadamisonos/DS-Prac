@@ -1,4 +1,4 @@
 #!/bin/sh
 echo $SHELL
-cd job-deployement/lib/python3.6/site-packages/
+cd  /home/jenkins/.local/lib/python2.7/site-packages/
 ls -l
