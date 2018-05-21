@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "Building....."
 
-                sh 'rm -rf job-deployement libs lib'
+                sh 'rm -rf job-deployement libs lib container'
                 sh 'python3 -m venv job-deployement'
                 sh './build/build-container.sh wordcount'
 
