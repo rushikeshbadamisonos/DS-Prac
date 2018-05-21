@@ -1,13 +1,11 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage("Environment"){
-            agent { dockerfile true }  
-        }
         stage('Build') {
             agent {
                 label "python"
             }
+            agent { dockerfile true }
             steps {
                 echo "Building....."
                 sh 'rm -rf job-deployement libs lib container'
