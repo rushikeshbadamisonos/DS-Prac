@@ -11,6 +11,16 @@ pipeline {
                 sh 'rm -rf job-deployement libs lib container'
                 sh 'virtualenv  job-deployement --no-site-packages'
                 sh 'mkdir libs container'
+                sh '''
+                source job-deployement/bin/activate
+                requirement="src/jobs/"wordcount"/Config/requirements.txt"
+                while IFS= read -r dependency
+                do
+                  pip install --ignore-installed --user $dependency
+                  done < "$requirement"
+
+
+                '''
                 sh './build/build-container.sh wordcount'
 
 
