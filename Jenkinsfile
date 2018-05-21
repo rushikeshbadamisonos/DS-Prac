@@ -8,6 +8,7 @@ pipeline {
 
             steps {
                 echo "Building....."
+                sh 'apk info -d bash'
                 sh 'rm -rf job-deployement libs lib container'
                 sh 'virtualenv  job-deployement --no-site-packages'
                 sh 'mkdir libs container'
