@@ -13,12 +13,11 @@ pipeline {
                 sh 'virtualenv --no-site-packages job-deployement'
                 sh 'mkdir libs container'
                 sh '''
-
+                  source job-deployement/bin/activate
+                  echo $SHELL
                   requirement="src/jobs/"wordcount"/Config/requirements.txt"
                   while IFS= read -r dependency
                   do
-                    source job-deployement/bin/activate
-
                     pip3 install --ignore-installed --user $dependency
                     done < "$requirement"
                     cd job-deployement/lib/python3.6/site-packages/
