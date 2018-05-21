@@ -10,7 +10,7 @@ pipeline {
                 echo "Building....."
 
                 sh 'rm -rf job-deployement libs lib container'
-                sh 'python3 -m venv --no-site-packages job-deployement'
+                sh 'virtualenv --no-site-packages job-deployement'
                 sh 'mkdir libs container'
                 sh '''
                   source job-deployement/bin/activate
