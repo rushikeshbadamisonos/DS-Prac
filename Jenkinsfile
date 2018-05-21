@@ -4,7 +4,7 @@ pipeline {
 
         stage('Build') {
             agent {
-                label "python"
+                label "java"
             }
             steps {
                 echo "Building....."
