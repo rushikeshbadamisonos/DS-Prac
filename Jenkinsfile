@@ -18,9 +18,10 @@ pipeline {
                   while IFS= read -r dependency
                   do
                     source job-deployement/bin/activate
+
                     pip3 install --ignore-installed --user $dependency
                     done < "$requirement"
-
+                    cd job-deployement/lib/python3.6/site-packages/
                   '''
                 sh './build/build-container.sh wordcount'
 
