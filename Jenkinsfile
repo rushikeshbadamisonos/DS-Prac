@@ -5,7 +5,7 @@ pipeline {
             agent {
                 label "python"
             }
-            agent { dockerfile true }
+            
             steps {
                 echo "Building....."
                 sh 'rm -rf job-deployement libs lib container'
