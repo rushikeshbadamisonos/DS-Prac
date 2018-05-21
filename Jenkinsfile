@@ -13,7 +13,6 @@ pipeline {
                 sh 'mkdir libs container'
                 sh '''
                 requirement="src/jobs/"wordcount"/Config/requirements.txt"
-                pip uninstall --yes -r $requirement
                 while IFS= read -r dependency
                 do
                   source job-deployement/bin/activate && pip3 install -I --user requests $dependency
