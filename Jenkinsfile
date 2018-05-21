@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                label "ansible"
+                label "python"
             }
 
             steps {
