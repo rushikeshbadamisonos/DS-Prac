@@ -1,2 +1,2 @@
-$pwd
+pwd
 echo $1
