@@ -30,7 +30,7 @@ pipeline {
             steps {
               echo 'Deploying to Master...'
               withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'rushiSecret', passphraseVariable: 'rushiSecret', usernameVariable: 'hadoop'), string(credentialsId: 'rushiSecretText', variable: 'rushiSecretText')]) {
-              sh 'ssh -I $rushiSecret $rushiSecretText mkdir test'
+              sh 'ssh -I $rushiSecret $rushiSecretText "mkdir test"'
 
               }
 
