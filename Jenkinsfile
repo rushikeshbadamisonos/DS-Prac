@@ -30,7 +30,7 @@ pipeline {
             steps {
               echo 'Deploying to Master...'
               withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'rushiSecret', passphraseVariable: 'rushiSecret', usernameVariable: 'rushiSecret'), string(credentialsId: 'cluster_Id', variable: 'rushiSecretText')]){
-                sh '.build/ship-container.sh $rushiSecret $rushiSecretText'
+                sh './build/ship-container.sh $rushiSecret $rushiSecretText'
               }
 
 
