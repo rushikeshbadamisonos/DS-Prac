@@ -30,9 +30,8 @@ pipeline {
             steps {
               echo 'Deploying to Master...'
               withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'rushiSecret', passphraseVariable: 'rushiSecret', usernameVariable: 'hadoop'), string(credentialsId: 'rushiSecretText', variable: 'rushiSecretText')]) {
-                echo $rushiSecret
-                echo $usernameVariable
-                echo $rushiSecretText
+                echo $keyFileVariable
+                
               }
 
 
