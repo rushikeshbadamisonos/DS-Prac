@@ -8,8 +8,6 @@ pipeline {
 
             steps {
                 echo "Building....."
-                sh "cd.."
-                sh "pwd"
                 sh 'rm -rf job-deployement libs lib container'
                 sh 'virtualenv  job-deployement --no-site-packages'
                 sh 'mkdir libs container'
