@@ -29,10 +29,7 @@ pipeline {
             }
             steps {
               echo 'Deploying to Master...'
-              withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'rushiSecret', passphraseVariable: 'rushiSecret', usernameVariable: 'hadoop'), string(credentialsId: 'rushiSecretText', variable: 'rushiSecretText')]) {
-              sh 'ssh -i $rushiSecret $rushiSecretText "mkdir test"'
-
-              }
+          
               withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'engx', passphraseVariable: 'engx', usernameVariable: 'hadoop'), string(credentialsId: 'cluster_Id', variable: 'clusterIP')]) {
                   sh 'ssh -i $engx $clusterIP "mkdir test"'
             }
