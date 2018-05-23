@@ -35,6 +35,9 @@ pipeline {
               sh 'ssh -i $rushiSecret $rushiSecretText "mkdir test"'
 
               }
+              withCredentials([sshUserPrivateKey(credentialsId: 'rushiSecret', keyFileVariable: 'engx', passphraseVariable: 'engx', usernameVariable: 'hadoop'), string(credentialsId: 'cluster_Id', variable: 'clusterIP')]) {
+                  sh 'ssh -i $engx $clusterIP "mkdir test"'
+            }
 
 
 
