@@ -31,7 +31,7 @@ pipeline {
               echo 'Deploying to Master...'
 
 
-                sh 'ssh -i engx-data_pem hadoop@10.227.179.117 "mkdir test"'
+                sh 'ssh -i $engx hadoop@10.227.179.117 "mkdir test"'
 
 
 
